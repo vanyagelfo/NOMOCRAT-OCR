@@ -1,19 +1,11 @@
 # NOMOCRAT-OCR
 
 ## Overview
-This folder contains notebook-based OCR pipelines for Maltese text transcription using Tesseract as a base model to further fine tune on.
+This folder contains notebook-based OCR pipelines for Maltese text transcription using Tesseract as a base model to further fine tune on. The fine tuned model can be found in the tessdata_custom folder and can be used through the trancribe_tuned notebook. 
 
-The main tuned pipeline is in:
-- transcribe_tuned.ipynb
+The Model Evaluation folder then contains the notebooks used to evaluate off-the-shelf models considered as a base for fine tuning models.
 
-It reads cropped images, runs OCR with a fine-tuned language model, and writes one text file per crop.
-
-## Folder Structure
-- segments_pipeline_hybrid_yolov12l_proc/: processed crop images used as OCR input
-- segments_pipeline_hybrid_yolov12l_raw/: raw crop images
-- tuned_tesseract_output_proc/: OCR text output for processed crops
-- tuned_tesseract_output_raw/: OCR text output for raw crops
-- transcribe_tuned.ipynb: OCR with fine-tuned model
+The ocr-data-toolkit folder then contains an editted version of the original ocr-data-toolkit git which was used to generate the synthetic dataset. [https://socket.dev/pypi/package/ocr-data-toolkit]
 
 ## Prerequisites
 - Python environment with:
@@ -23,14 +15,3 @@ It reads cropped images, runs OCR with a fine-tuned language model, and writes o
 - Tesseract CLI installed and available in PATH.
 - Tuned model file available at:
   - ./tesstrain_data/tessdata_custom/mlt_custom_v1.traineddata
-
-## Output Naming
-For each input crop image:
-- Input: <relative_folder>/<name>.png
-- Output: <relative_folder>/tuned_<name>.txt
-
-The relative folder hierarchy is preserved from the input crops directory.
-
-## Notes
-- Current loop processes only PNG files.
-- To support JPG or TIFF, update the file loop pattern in the transcription cell.
