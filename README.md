@@ -15,3 +15,6 @@ The ocr-data-toolkit folder then contains an editted version of the original ocr
 - Tesseract CLI installed and available in PATH.
 - Tuned model file available at:
   - ./tesstrain_data/tessdata_custom/mlt_custom_v1.traineddata
+
+## Refernce
+https://www.um.edu.mt/projects/nomocrat
